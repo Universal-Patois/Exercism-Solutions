@@ -1,29 +1,45 @@
-// @ts-check
-//
-// The line above enables type checking for this file. Various IDEs interpret
-// the @ts-check directive. It will give you helpful autocompletion when
-// implementing this exercise.
-
-/**
- * Determines how long it takes to prepare a certain juice.
- *
- * @param {string} name
- * @returns {number} time in minutes
- */
 export function timeToMixJuice(name) {
-  throw new Error('Please implement the timeToMixJuice function');
+  switch(name) {
+    case 'Pure Strawberry Joy':
+      return 0.5;
+    case 'Tropical Island':
+      return 3;
+    case 'All or Nothing':
+      return 5;
+    case 'Energizer':
+    case 'Green Garden':
+      return 1.5;
+    default:
+      return 2.5;
+  }
 }
 
-/**
- * Calculates the number of limes that need to be cut
- * to reach a certain supply.
- *
- * @param {number} wedgesNeeded
- * @param {string[]} limes
- * @returns {number} number of limes cut
- */
 export function limesToCut(wedgesNeeded, limes) {
-  throw new Error('Please implement the limesToCut function');
+  let limesNeeded = 0
+  let wedges = wedgesNeeded
+  let i = 0
+
+  while (wedges > 0 && limes.length > 0) {
+
+    switch(limes[i]) {
+      case 'small':
+        wedges -= 6;
+        limes.shift();
+        limesNeeded += 1;
+        break;
+      case 'medium':
+        wedges -= 8;
+        limes.shift();
+        limesNeeded += 1;
+        break;
+      case 'large':
+        wedges -= 10;
+        limes.shift();
+        limesNeeded += 1;
+        break;     
+    }
+  }
+  return limesNeeded;
 }
 
 /**
@@ -33,6 +49,15 @@ export function limesToCut(wedgesNeeded, limes) {
  * @param {string[]} orders
  * @returns {string[]} remaining orders after the time is up
  */
+
+
 export function remainingOrders(timeLeft, orders) {
-  throw new Error('Please implement the remainingOrders function');
+  let remainingTime = timeLeft;
+  let i = 0;
+
+  do {
+    remainingTime -= timeToMixJuice(orders[i]);
+    i++;
+  }
+  while (remainingTime > 0);
 }
