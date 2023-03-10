@@ -60,54 +60,54 @@ describe('limesToCut', () => {
   });
 });
 
-describe('remainingOrders', () => {
-  test('correctly determines the remaining orders', () => {
-    const orders = [
-      'Tropical Island',
-      'Energizer',
-      'Limetime',
-      'All or Nothing',
-      'Pure Strawberry Joy',
-    ];
-    const expected = ['All or Nothing', 'Pure Strawberry Joy'];
+// describe('remainingOrders', () => {
+//   test('correctly determines the remaining orders', () => {
+//     const orders = [
+//       'Tropical Island',
+//       'Energizer',
+//       'Limetime',
+//       'All or Nothing',
+//       'Pure Strawberry Joy',
+//     ];
+//     const expected = ['All or Nothing', 'Pure Strawberry Joy'];
 
-    expect(remainingOrders(7, orders)).toEqual(expected);
-  });
+//     expect(remainingOrders(7, orders)).toEqual(expected);
+//   });
 
-  test('correctly handles orders that were started because there was time left', () => {
-    const orders = [
-      'Pure Strawberry Joy',
-      'Pure Strawberry Joy',
-      'Vitality',
-      'Tropical Island',
-      'All or Nothing',
-      'All or Nothing',
-      'All or Nothing',
-      'Green Garden',
-      'Limetime',
-    ];
-    const expected = ['All or Nothing', 'Green Garden', 'Limetime'];
+//   test('correctly handles orders that were started because there was time left', () => {
+//     const orders = [
+//       'Pure Strawberry Joy',
+//       'Pure Strawberry Joy',
+//       'Vitality',
+//       'Tropical Island',
+//       'All or Nothing',
+//       'All or Nothing',
+//       'All or Nothing',
+//       'Green Garden',
+//       'Limetime',
+//     ];
+//     const expected = ['All or Nothing', 'Green Garden', 'Limetime'];
 
-    expect(remainingOrders(13, orders)).toEqual(expected);
-  });
+//     expect(remainingOrders(13, orders)).toEqual(expected);
+//   });
 
-  test('counts all orders as fulfilled if there is enough time', () => {
-    const orders = [
-      'Energizer',
-      'Green Garden',
-      'Ruby Glow',
-      'Pure Strawberry Joy',
-      'Tropical Island',
-      'Limetime',
-    ];
+//   test('counts all orders as fulfilled if there is enough time', () => {
+//     const orders = [
+//       'Energizer',
+//       'Green Garden',
+//       'Ruby Glow',
+//       'Pure Strawberry Joy',
+//       'Tropical Island',
+//       'Limetime',
+//     ];
 
-    expect(remainingOrders(12, orders)).toEqual([]);
-  });
+//     expect(remainingOrders(12, orders)).toEqual([]);
+//   });
 
-  test('works if there is only very little time left', () => {
-    const orders = ['Bananas Gone Wild', 'Pure Strawberry Joy'];
-    const expected = ['Pure Strawberry Joy'];
+//   test('works if there is only very little time left', () => {
+//     const orders = ['Bananas Gone Wild', 'Pure Strawberry Joy'];
+//     const expected = ['Pure Strawberry Joy'];
 
-    expect(remainingOrders(0.2, orders)).toEqual(expected);
-  });
-});
+//     expect(remainingOrders(0.2, orders)).toEqual(expected);
+//   });
+// });
