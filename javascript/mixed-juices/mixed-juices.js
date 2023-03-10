@@ -20,7 +20,7 @@ export function limesToCut(wedgesNeeded, limes) {
   let i = 0
 
   while (wedges > 0 && limes.length > 0) {
-    
+
     switch(limes[i]) {
       case 'small':
         wedges -= 6;
@@ -49,6 +49,15 @@ export function limesToCut(wedgesNeeded, limes) {
  * @param {string[]} orders
  * @returns {string[]} remaining orders after the time is up
  */
+
+
 export function remainingOrders(timeLeft, orders) {
-  throw new Error('Please implement the remainingOrders function');
+  let remainingTime = timeLeft;
+  let i = 0;
+
+  do {
+    remainingTime -= timeToMixJuice(orders[i]);
+    i++;
+  }
+  while (remainingTime > 0);
 }
