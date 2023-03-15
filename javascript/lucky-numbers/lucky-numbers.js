@@ -8,7 +8,9 @@
  * @returns {number} sum of the two arrays
  */
 export function twoSum(array1, array2) {
-  throw new Error('Implement the twoSum function');
+  const num1 = Number(array1.join(''))
+  const num2 = Number(array2.join(''))
+  return num1 + num2
 }
 
 /**
@@ -18,7 +20,11 @@ export function twoSum(array1, array2) {
  * @returns {boolean} whether the number is a palindrome or not
  */
 export function luckyNumber(value) {
-  throw new Error('Implement the luckyNumber function');
+  if (String(value) === String(value).split('').reverse().join('')) {
+    return true
+  } else {
+    return false
+  }
 }
 
 /**
@@ -29,5 +35,11 @@ export function luckyNumber(value) {
  * @returns {string} error message
  */
 export function errorMessage(input) {
-  throw new Error('Implement the errorMessage function');
+  if (!input) {
+    return 'Required field'
+  } else if (!Number(input)) {
+    return 'Must be a number besides 0'
+  } else {
+    return ''
+  }
 }
