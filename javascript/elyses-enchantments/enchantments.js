@@ -35,4 +35,5 @@ export function removeItemAtBottom(cards) {
 
 export function checkSizeOfStack(cards, stackSize) {
   return cards.length === stackSize;
+  
 }
