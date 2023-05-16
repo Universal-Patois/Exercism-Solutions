@@ -1,4 +1,4 @@
-// @ts-check
+// @ts-nocheck
 
 /**
  * Double every card in the deck.
@@ -21,7 +21,13 @@ export function seeingDouble(deck) {
  * @returns {number[]} deck with triplicate 3s
  */
 export function threeOfEachThree(deck) {
-  
+  return deck.reduce((array, card) => {
+    array.push(card)
+    if (card === 3) {
+      array.push(card, card)
+    } 
+    return array
+  }, [])
 }
 
 /**
