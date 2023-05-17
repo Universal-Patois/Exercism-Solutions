@@ -62,43 +62,43 @@ describe('threeOfEachThree', () => {
   });
 });
 
-// describe('middleTwo', () => {
-//   test('extracts the middle two cards', () => {
-//     const deck = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-//     const expected = [5, 6];
-//     expect(middleTwo(deck)).toEqual(expected);
-//   });
+describe('middleTwo', () => {
+  test('extracts the middle two cards', () => {
+    const deck = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    const expected = [5, 6];
+    expect(middleTwo(deck)).toEqual(expected);
+  });
 
-//   test('works with an unordered deck', () => {
-//     const deck = [6, 10, 5, 9, 4, 3, 1, 2, 6, 8];
-//     const expected = [4, 3];
-//     expect(middleTwo(deck)).toEqual(expected);
-//   });
-// });
+  test('works with an unordered deck', () => {
+    const deck = [6, 10, 5, 9, 4, 3, 1, 2, 6, 8];
+    const expected = [4, 3];
+    expect(middleTwo(deck)).toEqual(expected);
+  });
+});
 
-// describe('sandwichTrick', () => {
-//   test('moves the outside two cards into the middle', () => {
-//     const deck = [1, 6, 7, 7, 2, 1];
-//     const expected = [6, 7, 1, 1, 7, 2];
-//     expect(sandwichTrick(deck)).toEqual(expected);
-//   });
+describe('sandwichTrick', () => {
+  test('moves the outside two cards into the middle', () => {
+    const deck = [1, 6, 7, 7, 2, 1];
+    const expected = [6, 7, 1, 1, 7, 2];
+    expect(sandwichTrick(deck)).toEqual(expected);
+  });
 
-//   test('switches the order of the moved cards', () => {
-//     const deck = [3, 6, 1, 7, 2, 8];
-//     const expected = [6, 1, 8, 3, 7, 2];
-//     expect(sandwichTrick(deck)).toEqual(expected);
-//   });
+  test('switches the order of the moved cards', () => {
+    const deck = [3, 6, 1, 7, 2, 8];
+    const expected = [6, 1, 8, 3, 7, 2];
+    expect(sandwichTrick(deck)).toEqual(expected);
+  });
 
-//   test('can handle a small deck', () => {
-//     expect(sandwichTrick([1, 10])).toEqual([10, 1]);
-//   });
+  test('can handle a small deck', () => {
+    expect(sandwichTrick([1, 10])).toEqual([10, 1]);
+  });
 
-//   test('can handle a large deck', () => {
-//     const deck = [9, 10, 5, 9, 4, 3, 1, 2, 6, 7];
-//     const expected = [10, 5, 9, 4, 7, 9, 3, 1, 2, 6];
-//     expect(sandwichTrick(deck)).toEqual(expected);
-//   });
-// });
+  test('can handle a large deck', () => {
+    const deck = [9, 10, 5, 9, 4, 3, 1, 2, 6, 7];
+    const expected = [10, 5, 9, 4, 7, 9, 3, 1, 2, 6];
+    expect(sandwichTrick(deck)).toEqual(expected);
+  });
+});
 
 // describe('twoIsSpecial', () => {
 //   test('keeps only the 2s', () => {
