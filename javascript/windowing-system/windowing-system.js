@@ -52,6 +52,27 @@ export class ProgramWindow {
     const newHeight = Math.max(1, Math.min(newSize.height, maxHeight))
     this.size.resize(newWidth, newHeight)
   }
+
+  move(newPosition) {
+    newPosition.x < 0 && newPosition.move(0, newPosition.y)
+    newPosition.y < 0 && newPosition.move(newPosition.x, 0)
+
+    if (newPosition.x + this.size.width > this.screenSize.width) {
+      const newX = newPosition.x - (this.size.width - (this.screenSize.width - newPosition.x));
+      newPosition.move(newX, newPosition.y);
+    }
+    if (newPosition.y + this.size.height > this.screenSize.height) {
+      const newY = newPosition.y - (this.size.height - (this.screenSize.height - newPosition.y));
+      newPosition.move(newPosition.x, newY);      
+    }
+
+    this.position.move(newPosition.x, newPosition.y);
+  }
 }
 
 
+export const changeWindow = (window) => {
+  window.resize(new Size(400, 300))
+  window.move(new Position(100, 150))
+  return window
+}

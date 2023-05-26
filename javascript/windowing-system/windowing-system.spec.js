@@ -94,69 +94,69 @@ describe('resize', () => {
   });
 });
 
-// describe('move', () => {
-//   test('provides a move method', () => {
-//     const programWindow = new ProgramWindow();
-//     const newPosition = new Position(525, 450);
-//     programWindow.move(newPosition);
+describe('move', () => {
+  test('provides a move method', () => {
+    const programWindow = new ProgramWindow();
+    const newPosition = new Position(525, 450);
+    programWindow.move(newPosition);
 
-//     expect(programWindow.position.x).toBe(525);
-//     expect(programWindow.position.y).toBe(450);
-//   });
+    expect(programWindow.position.x).toBe(525);
+    expect(programWindow.position.y).toBe(450);
+  });
 
-//   test('move respects the lower bound for the position', () => {
-//     const programWindow = new ProgramWindow();
-//     const newPosition = new Position(-20, -10);
-//     programWindow.move(newPosition);
+  test('move respects the lower bound for the position', () => {
+    const programWindow = new ProgramWindow();
+    const newPosition = new Position(-20, -10);
+    programWindow.move(newPosition);
 
-//     expect(programWindow.position.x).toBe(0);
-//     expect(programWindow.position.y).toBe(0);
-//   });
+    expect(programWindow.position.x).toBe(0);
+    expect(programWindow.position.y).toBe(0);
+  });
 
-//   test('move respects limits due to screen and window size', () => {
-//     const programWindow = new ProgramWindow();
-//     const newSize = new Size(100, 100);
-//     programWindow.resize(newSize);
-//     const newPosition = new Position(750, 650);
-//     programWindow.move(newPosition);
+  test('move respects limits due to screen and window size', () => {
+    const programWindow = new ProgramWindow();
+    const newSize = new Size(100, 100);
+    programWindow.resize(newSize);
+    const newPosition = new Position(750, 650);
+    programWindow.move(newPosition);
 
-//     expect(programWindow.position.x).toBe(700);
-//     expect(programWindow.position.y).toBe(500);
-//   });
+    expect(programWindow.position.x).toBe(700);
+    expect(programWindow.position.y).toBe(500);
+  });
 
-//   test('resize respects limits due to position and screen size', () => {
-//     const programWindow = new ProgramWindow();
-//     const newPosition = new Position(710, 525);
-//     programWindow.move(newPosition);
-//     const newSize = new Size(1000, 1000);
-//     programWindow.resize(newSize);
+  test('resize respects limits due to position and screen size', () => {
+    const programWindow = new ProgramWindow();
+    const newPosition = new Position(710, 525);
+    programWindow.move(newPosition);
+    const newSize = new Size(1000, 1000);
+    programWindow.resize(newSize);
 
-//     expect(programWindow.size.width).toBe(90);
-//     expect(programWindow.size.height).toBe(75);
-//   });
-// });
+    expect(programWindow.size.width).toBe(90);
+    expect(programWindow.size.height).toBe(75);
+  });
+});
 
-// describe('changeWindow', () => {
-//   test('resizes the window', () => {
-//     const programWindow = new ProgramWindow();
-//     const updatedWindow = changeWindow(programWindow);
+describe('changeWindow', () => {
+  test('resizes the window', () => {
+    const programWindow = new ProgramWindow();
+    const updatedWindow = changeWindow(programWindow);
 
-//     expect(updatedWindow.size.width).toBe(400);
-//     expect(updatedWindow.size.height).toBe(300);
-//   });
+    expect(updatedWindow.size.width).toBe(400);
+    expect(updatedWindow.size.height).toBe(300);
+  });
 
-//   test('moves the window', () => {
-//     const programWindow = new ProgramWindow();
-//     const updatedWindow = changeWindow(programWindow);
+  test('moves the window', () => {
+    const programWindow = new ProgramWindow();
+    const updatedWindow = changeWindow(programWindow);
 
-//     expect(updatedWindow.position.x).toBe(100);
-//     expect(updatedWindow.position.y).toBe(150);
-//   });
+    expect(updatedWindow.position.x).toBe(100);
+    expect(updatedWindow.position.y).toBe(150);
+  });
 
-//   test('returns the same instance that was passed in', () => {
-//     const programWindow = new ProgramWindow();
-//     const updatedWindow = changeWindow(programWindow);
+  test('returns the same instance that was passed in', () => {
+    const programWindow = new ProgramWindow();
+    const updatedWindow = changeWindow(programWindow);
 
-//     expect(Object.is(updatedWindow, programWindow)).toBe(true);
-//   });
-// });
+    expect(Object.is(updatedWindow, programWindow)).toBe(true);
+  });
+});
