@@ -28,3 +28,4 @@ export const score = (word) => {
 
   return score
 };
+
